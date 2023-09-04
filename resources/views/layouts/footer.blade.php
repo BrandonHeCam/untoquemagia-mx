@@ -4,7 +4,7 @@
             <article class="flex flex-col gap-3 text-white text-center lg:text-left">
                 <a href="{{ route('home') }}">
                     <img class="w-auto mx-auto h-[72px] sm:h-24 lg:mx-0"
-                        src="{{ asset('images/utils/untoquemagia.svg') }}" alt="">
+                        src="{{ asset('images/utils/untoquemagia.svg') }}" alt="Un Toque de Magia">
                 </a>
 
                 <p class="max-w-xs mx-auto text-white text-base md:text-lg font-normal">Crea una cuenta y explora los

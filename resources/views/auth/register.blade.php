@@ -11,8 +11,11 @@
                     <div class="flex-1">
                         <div class="text-center">
                             <div class="flex justify-center mx-auto">
-                                <img class="w-auto h-[72px] sm:h-24"
-                                    src="{{ asset('images/utils/untoquemagia-black.svg') }}" alt="">
+                                <a href="{{ route('home') }}">
+                                    <img class="w-auto h-[72px] sm:h-24"
+                                        src="{{ asset('images/utils/untoquemagia-black.svg') }}"
+                                        alt="Un Toque de Magia">
+                                </a>
                             </div>
 
                             <p class="mt-3 text-gray-800">¡Sé parte de nuestra comunidad y experimenta la autenticidad y
