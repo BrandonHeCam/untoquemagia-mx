@@ -76,9 +76,27 @@
 
                     @if (Route::has('login'))
                     @auth
-                    {{-- <a href="{{ url('/dashboard') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                    --}}
+                    {{-- Si el usuario logueado es admin --}}
+                    @if (Auth::user()->hasRole('admin'))
+                    <x-nav-link hoverBgColor="blueRegilet" :href="route('admin.dashboard')"
+                        :active="request()->routeIs('admin.dashboard')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="block md:hidden" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                            <path d="M12 9v4"></path>
+                            <path d="M12 16v.01"></path>
+                        </svg>
+                        {{__('Dashboard') }}
+                    </x-nav-link>
+
+                    {{-- @else --}}
+                    {{-- Si el usuario logueado es customer --}}
+                    {{-- <a href="{{ route('dashboard.customer') }}"
+                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard
+                        Customer</a> --}}
+                    @endif
                     @else
                     <x-nav-link hoverBgColor="primaryColor" :href="route('login')"
                         :active="request()->routeIs('login')">
@@ -111,7 +129,8 @@
                 </div>
 
                 <div class="flex justify-center md:block md:ml-6">
-                    <a class="relative text-white hover:text-white/70 transition-colors duration-300 transform"
+                    @if (Auth::user()->hasRole('admin'))
+                    <a class="relative hidden text-white hover:text-white/70 transition-colors duration-300 transform"
                         href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -124,6 +143,20 @@
                         </svg>
                         <span class="absolute top-0 left-0 p-1 text-xs text-white bg-blue-500 rounded-full"></span>
                     </a>
+                    @endif
+                    {{-- <a class="relative text-white hover:text-white/70 transition-colors duration-300 transform"
+                        href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                            <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                            <path d="M17 17h-11v-14h-2"></path>
+                            <path d="M6 5l14 1l-1 7h-13"></path>
+                        </svg>
+                        <span class="absolute top-0 left-0 p-1 text-xs text-white bg-blue-500 rounded-full"></span>
+                    </a> --}}
                 </div>
             </div>
         </div>
