@@ -75,15 +75,14 @@
                     </div>
                 </div>
             </div>
-            <!-- Divider -->
-            <hr class="my-4 md:min-w-full" />
+
             <!-- Heading -->
-            <h6 class="md:min-w-full text-blueGray-500 text-lg font-bold pt-1 mb-6 flex items-center gap-2">
+            <h6 class="md:min-w-full text-blueGray-500 text-lg font-bold flex items-center gap-2">
                 Mi Administración
             </h6>
 
             <!-- Navigation -->
-            <ul class="md:flex-col md:min-w-full flex flex-col gap-5 list-none">
+            <ul class="md:flex-col md:min-w-full flex flex-col gap-5 p-5 list-none">
                 <li class="items-center">
                     <a href="{{ route('admin.dashboard') }}"
                         class="flex gap-2 items-center text-base font-semibold hover:underline">
