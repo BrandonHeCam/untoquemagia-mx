@@ -33,7 +33,7 @@ Route::prefix('/')->group(function () {
 | Rutas que solo el usuario con rol "administrador" puede acceder.
 */
 
-Route::prefix('admin')->middleware(['auth', 'checkrole:admin'])->group(function () {
+Route::prefix('admin')->middleware(['auth', 'verified', 'checkrole:admin'])->group(function () {
     Route::get('/dashboard', ProductsController::class)->name('admin.dashboard');
 
     // Perfil Administrador
