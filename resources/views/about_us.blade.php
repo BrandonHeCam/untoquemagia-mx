@@ -160,9 +160,10 @@
 
                             <div class="lg:w-1/2">
                                 <h4 class="text-xl font-bold">Correo electrónico</h4>
-                                <a class="text-indigo-500">lriosflores@yahoo.com.mx</a>
+                                <a href="mailto:untoquedemagia3@gmail.com"
+                                    class="text-indigo-500">untoquedemagia3@gmail.com</a>
                                 <h4 class="text-xl font-bold mt-4">Teléfono</h4>
-                                <p>248 115 2776</p>
+                                <a href="tel:248 115 2776">248 115 2776</a>
                             </div>
                         </div>
                     </div>

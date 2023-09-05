@@ -12,7 +12,8 @@
                     productos que tenemos para ti!</p>
 
                 <div class="flex justify-center gap-3 mt-3 lg:justify-start">
-                    <a href="#" class="text-white hover:text-white/70">
+                    <a href="https://www.facebook.com/Un-Toque-de-Magia-106885757871322/" target="_blank"
+                        class="text-white hover:text-white/70">
                         <svg class="w-8 h-8 fill-current" fill="none" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -20,7 +21,7 @@
                         </svg>
                     </a>
 
-                    <a href="#" class="text-white hover:text-white/70">
+                    <a href="https://twitter.com/untoquede_magia" class="text-white hover:text-white/70">
                         <svg class="w-8 h-8 fill-current" fill="none" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -28,7 +29,8 @@
                         </svg>
                     </a>
 
-                    <a href="#" class="text-white hover:text-white/70">
+                    <a href="https://www.youtube.com/channel/UCfX3cq_lS6-7S_ESpu7DYjQ"
+                        class="text-white hover:text-white/70">
                         <svg class="w-8 h-8 fill-current" fill="none" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -36,7 +38,7 @@
                         </svg>
                     </a>
 
-                    <a href="#" class="text-white hover:text-white/70">
+                    <a href="https://pin.it/6Uq6Oh1" class="text-white hover:text-white/70">
                         <svg class="w-8 h-8 fill-current" fill="none" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -50,13 +52,14 @@
                 <x-slot:heading>
                     Contacto
                     </x-slot>
-                    <x-guest.foo-link :href="route('register')" :active="request()->routeIs('register')">(+52)248 115 27
+                    <x-guest.foo-link :href="url('tel:248 115 27')">(+52) 248
+                        115 27
                         76
                     </x-guest.foo-link>
-                    <x-guest.foo-link :href="route('register')" :active="request()->routeIs('register')">
+                    <x-guest.foo-link :href="url('mailto:untoquedemagia3@gmail.com')">
                         untoquedemagia3@gmail.com
                     </x-guest.foo-link>
-                    <x-guest.foo-link :href="route('register')" :active="request()->routeIs('register')">A. Serdán 107,
+                    <x-guest.foo-link :href="url('https://goo.gl/maps/CUyURqE2dtD2mkkg6')">A. Serdán 107,
                         Col
                         Alvaro
                         Obregón, 74060 San Martín Texmelucan
@@ -68,7 +71,7 @@
                 <x-slot:heading>
                     Más información
                     </x-slot>
-                    <x-guest.foo-link :href="route('register')" :active="request()->routeIs('register')">Términos y
+                    <x-guest.foo-link :href=" route('register')" :active="request()->routeIs('register')">Términos y
                         Condiciones
                     </x-guest.foo-link>
                     <x-guest.foo-link :href="route('register')" :active="request()->routeIs('register')">Privacidad
