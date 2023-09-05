@@ -96,7 +96,7 @@
                     <p>{{ Auth::user()->name }}</p>
 
                     <x-nav-link hoverBgColor="blueRegilet" :href="route('customer.profile.edit')"
-                        :active="request()->routeIs('customer.dashboard')">
+                        :active="request()->routeIs('customer.profile.edit')">
                         <svg xmlns="http://www.w3.org/2000/svg" class="block md:hidden" width="24" height="24"
                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                             stroke-linecap="round" stroke-linejoin="round">
