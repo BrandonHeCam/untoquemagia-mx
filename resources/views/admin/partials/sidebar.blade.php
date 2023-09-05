@@ -5,100 +5,108 @@
         <button
             class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
             type="button" onclick="toggleNavbar('example-collapse-sidebar')">
-            <i class="fas fa-bars"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
         </button>
-        <a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
-            href="../../index.html">
-            Notus Tailwind JS
+
+        <!-- Logotipo Mobile-->
+        <a class="md:block inline-block" href="{{ route('admin.dashboard') }}">
+            <img class="w-auto h-[72px] sm:h-24" src="{{ asset('images/utils/untoquemagia-black.svg') }}"
+                alt="Un Toque de Magia">
         </a>
+
         <ul class="md:hidden items-center flex flex-wrap list-none">
+
             <li class="inline-block relative">
-                <a class="text-blueGray-500 block py-1 px-3" href="#pablo"
-                    onclick="openDropdown(event,'notification-dropdown')"><i class="fas fa-bell"></i></a>
-                <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
-                    id="notification-dropdown">
-                    <a href="#pablo"
-                        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Action</a><a
-                        href="#pablo"
-                        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Another
-                        action</a><a href="#pablo"
-                        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Something
-                        else here</a>
-                    <div class="h-0 my-2 border border-solid border-blueGray-100"></div>
-                    <a href="#pablo"
-                        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Seprated
-                        link</a>
-                </div>
-            </li>
-            <li class="inline-block relative">
-                <a class="text-blueGray-500 block" href="#pablo"
-                    onclick="openDropdown(event,'user-responsive-dropdown')">
+
+                <!-- Avatar de Usuario - Vista Desktop -->
+                <a class="text-blueGray-500 block" onclick="openDropdown(event,'user-responsive-dropdown')">
                     <div class="items-center flex">
                         <span
                             class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"><img
-                                alt="..." class="w-full rounded-full align-middle border-none shadow-lg"
-                                src="../../assets/img/team-1-800x800.jpg" /></span>
+                                alt="" class="w-full rounded-full align-middle border-none shadow-lg"
+                                src="{{ asset('images/utils/user.png') }}" /></span>
                     </div>
                 </a>
-                <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+
+                <!-- Opciones de Sesión - Vista Desktop -->
+                <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg w-[150px]"
                     id="user-responsive-dropdown">
-                    <a href="#pablo"
-                        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Action</a><a
-                        href="#pablo"
-                        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Another
-                        action</a><a href="#pablo"
-                        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Something
-                        else here</a>
+                    <x-dropdown-link :href="route('admin.profile.edit')">
+                        {{ __('Mi Perfil') }}
+                    </x-dropdown-link>
+
                     <div class="h-0 my-2 border border-solid border-blueGray-100"></div>
-                    <a href="#pablo"
-                        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Seprated
-                        link</a>
+
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                                                            this.closest('form').submit();">
+                            {{ __('Cerrar sesión') }}
+                        </x-dropdown-link>
+                    </form>
                 </div>
             </li>
         </ul>
-        <div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden"
+
+        <!-- Componente de Sidebar -->
+        <div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden"
             id="example-collapse-sidebar">
             <div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200">
                 <div class="flex flex-wrap">
                     <div class="w-6/12">
-                        <a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
-                            href="../../index.html">
-                            Notus Tailwind JS
+                        <a class="md:block inline-block" href="{{ route('admin.dashboard') }}">
+                            <img class="w-auto h-[72px] sm:h-24"
+                                src="{{ asset('images/utils/untoquemagia-black.svg') }}" alt="Un Toque de Magia">
                         </a>
                     </div>
                     <div class="w-6/12 flex justify-end">
                         <button type="button"
                             class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
                             onclick="toggleNavbar('example-collapse-sidebar')">
-                            <i class="fas fa-times"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
                         </button>
                     </div>
                 </div>
             </div>
-            <form class="mt-6 mb-4 md:hidden">
-                <div class="mb-3 pt-0">
-                    <input type="text" placeholder="Search"
-                        class="px-3 py-2 h-12 border border-solid border-blueGray-500 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal" />
-                </div>
-            </form>
             <!-- Divider -->
             <hr class="my-4 md:min-w-full" />
             <!-- Heading -->
-            <h6 class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-                Admin Layout Pages
+            <h6 class="md:min-w-full text-blueGray-500 text-lg font-bold pt-1 mb-6 flex items-center gap-2">
+                Mi Administración
             </h6>
-            <!-- Navigation -->
 
-            <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+            <!-- Navigation -->
+            <ul class="md:flex-col md:min-w-full flex flex-col gap-5 list-none">
                 <li class="items-center">
-                    <a href="./dashboard.html"
-                        class="text-xs uppercase py-3 font-bold block text-pink-500 hover:text-pink-600">
-                        <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
-                        Dashboard
+                    <a href="{{ route('admin.dashboard') }}"
+                        class="flex gap-2 items-center text-base font-semibold hover:underline">
+                        <svg class="w-6 h-6" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#000000"
+                                d="M1024 1000v959l-64 32l-832-415V536l832-416l832 416v744h-128V680l-640 320zm-64-736L719 384l621 314l245-122l-625-312zm-64 1552v-816L256 680v816l640 320zM335 576l625 312l238-118l-622-314l-241 120zm1073 1216v-128h640v128h-640zm0-384h640v128h-640v-128zm-256 640v-128h128v128h-128zm0-512v-128h128v128h-128zm0 256v-128h128v128h-128zm-128 24h1h-1zm384 232v-128h640v128h-640z" />
+                        </svg>
+                        Productos
                     </a>
                 </li>
 
                 <li class="items-center">
+                    <a href="{{ route('admin.dashboard') }}"
+                        class="flex gap-2 items-center text-base font-semibold hover:underline">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#000000"
+                                d="M11 13.5v8H3v-8h8m-2 2H5v4h4v-4M12 2l5.5 9h-11L12 2m0 3.86L10.08 9h3.84L12 5.86M17.5 13c2.5 0 4.5 2 4.5 4.5S20 22 17.5 22S13 20 13 17.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5a2.5 2.5 0 0 0 2.5 2.5a2.5 2.5 0 0 0 2.5-2.5a2.5 2.5 0 0 0-2.5-2.5Z" />
+                        </svg>
+                        Categorias
+                    </a>
+                </li>
+
+                {{-- <li class="items-center">
                     <a href="./settings.html"
                         class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
                         <i class="fas fa-tools mr-2 text-sm text-blueGray-300"></i>
@@ -120,132 +128,7 @@
                         <i class="fas fa-map-marked mr-2 text-sm text-blueGray-300"></i>
                         Maps
                     </a>
-                </li>
-            </ul>
-
-            <!-- Divider -->
-            <hr class="my-4 md:min-w-full" />
-            <!-- Heading -->
-            <h6 class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-                Auth Layout Pages
-            </h6>
-            <!-- Navigation -->
-
-            <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-                <li class="items-center">
-                    <a href="../auth/login.html"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block">
-                        <i class="fas fa-fingerprint text-blueGray-300 mr-2 text-sm"></i>
-                        Login
-                    </a>
-                </li>
-
-                <li class="items-center">
-                    <a href="../auth/register.html"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block">
-                        <i class="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i>
-                        Register
-                    </a>
-                </li>
-            </ul>
-
-            <!-- Divider -->
-            <hr class="my-4 md:min-w-full" />
-            <!-- Heading -->
-            <h6 class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-                No Layout Pages
-            </h6>
-            <!-- Navigation -->
-
-            <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-                <li class="items-center">
-                    <a href="../landing.html"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block">
-                        <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
-                        Landing Page
-                    </a>
-                </li>
-
-                <li class="items-center">
-                    <a href="../profile.html"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block">
-                        <i class="fas fa-user-circle text-blueGray-300 mr-2 text-sm"></i>
-                        Profile Page
-                    </a>
-                </li>
-            </ul>
-
-            <!-- Divider -->
-            <hr class="my-4 md:min-w-full" />
-            <!-- Heading -->
-            <h6 class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-                Documentation
-            </h6>
-            <!-- Navigation -->
-            <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-                <li class="inline-flex">
-                    <a href="https://www.creative-tim.com/learning-lab/tailwind/js/colors/notus" target="_blank"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold">
-                        <i class="fas fa-paint-brush mr-2 text-blueGray-300 text-base"></i>
-                        Styles
-                    </a>
-                </li>
-
-                <li class="inline-flex">
-                    <a href="https://www.creative-tim.com/learning-lab/tailwind/js/alerts/notus" target="_blank"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold">
-                        <i class="fab fa-css3-alt mr-2 text-blueGray-300 text-base"></i>
-                        CSS Components
-                    </a>
-                </li>
-
-                <li class="inline-flex">
-                    <a href="https://www.creative-tim.com/learning-lab/tailwind/angular/overview/notus" target="_blank"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold">
-                        <i class="fab fa-angular mr-2 text-blueGray-300 text-base"></i>
-                        Angular
-                    </a>
-                </li>
-
-                <li class="inline-flex">
-                    <a href="https://www.creative-tim.com/learning-lab/tailwind/js/overview/notus" target="_blank"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold">
-                        <i class="fab fa-js-square mr-2 text-blueGray-300 text-base"></i>
-                        Javascript
-                    </a>
-                </li>
-
-                <li class="inline-flex">
-                    <a href="https://www.creative-tim.com/learning-lab/tailwind/nextjs/overview/notus" target="_blank"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold">
-                        <i class="fab fa-react mr-2 text-blueGray-300 text-base"></i>
-                        NextJS
-                    </a>
-                </li>
-
-                <li class="inline-flex">
-                    <a href="https://www.creative-tim.com/learning-lab/tailwind/react/overview/notus" target="_blank"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold">
-                        <i class="fab fa-react mr-2 text-blueGray-300 text-base"></i>
-                        React
-                    </a>
-                </li>
-
-                <li class="inline-flex">
-                    <a href="https://www.creative-tim.com/learning-lab/tailwind/svelte/overview/notus" target="_blank"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold">
-                        <i class="fas fa-link mr-2 text-blueGray-300 text-base"></i>
-                        Svelte
-                    </a>
-                </li>
-
-                <li class="inline-flex">
-                    <a href="https://www.creative-tim.com/learning-lab/tailwind/vue/overview/notus" target="_blank"
-                        class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold">
-                        <i class="fab fa-vuejs mr-2 text-blueGray-300 text-base"></i>
-                        VueJS
-                    </a>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>

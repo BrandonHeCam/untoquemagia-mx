@@ -46,8 +46,11 @@
       /* Function for dropdowns */
       function openDropdown(event, dropdownID) {
         let element = event.target;
+        console.log(element)
         while (element.nodeName !== "A") {
+        console.log(element.nodeName)
           element = element.parentNode;
+          console.log(element)
         }
         Popper.createPopper(element, document.getElementById(dropdownID), {
           placement: "bottom-start"
