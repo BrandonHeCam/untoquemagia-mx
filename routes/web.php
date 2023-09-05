@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminProfileController;
+use App\Http\Controllers\CustomerProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ProductsController;
 
@@ -16,7 +17,7 @@ Route::prefix('/')->group(function () {
         return view('welcome');
     })->name('home');
 
-    Route::get('/collections', function () {
+    Route::get('collections', function () {
         return view('shop');
     })->name('shop');
 
@@ -33,7 +34,12 @@ Route::prefix('/')->group(function () {
 */
 
 Route::prefix('admin')->middleware(['auth', 'checkrole:admin'])->group(function () {
-    Route::get('/products', ProductsController::class)->name('products');
+    Route::get('/dashboard', ProductsController::class)->name('admin.dashboard');
+
+    // Perfil Administrador
+    Route::get('/profile', [AdminProfileController::class, 'edit'])->name('admin.profile.edit');
+    Route::patch('/profile', [AdminProfileController::class, 'update'])->name('admin.profile.update');
+    Route::delete('/profile', [AdminProfileController::class, 'destroy'])->name('admin.profile.destroy');
 });
 
 // Route::get('/dashboard', function () {
@@ -41,9 +47,9 @@ Route::prefix('admin')->middleware(['auth', 'checkrole:admin'])->group(function 
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [CustomerProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [CustomerProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [CustomerProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__ . '/auth.php';
