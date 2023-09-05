@@ -23,7 +23,7 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check() && Auth::user()->hasRole('admin')) {
                 return to_route('admin.dashboard');
             } elseif (Auth::guard($guard)->check() && Auth::user()->hasRole('customer')) {
-                return to_route('dashboard.customer');
+                return to_route('customer.dashboard');
             }
         }
 
