@@ -42,11 +42,8 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'checkrole:admin'])->gro
     Route::delete('/profile', [AdminProfileController::class, 'destroy'])->name('admin.profile.destroy');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
+Route::prefix('client')->middleware(['auth', 'verified', 'checkrole:customer'])->group(function () {
+    Route::get('/dashboard', ProductsController::class)->name('customer.dashboard');
     Route::get('/profile', [CustomerProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [CustomerProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [CustomerProfileController::class, 'destroy'])->name('profile.destroy');
