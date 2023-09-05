@@ -77,7 +77,7 @@
                     @if (Route::has('login'))
                     @auth
                     {{-- Si el usuario logueado es admin --}}
-                    @if (Auth::user()->hasRole('admin'))
+                    @if (Auth::check() && Auth::user()->hasRole('admin'))
                     <x-nav-link hoverBgColor="blueRegilet" :href="route('admin.dashboard')"
                         :active="request()->routeIs('admin.dashboard')">
                         <svg xmlns="http://www.w3.org/2000/svg" class="block md:hidden" width="24" height="24"
@@ -91,12 +91,17 @@
                         {{__('Dashboard') }}
                     </x-nav-link>
 
-                    {{-- @else --}}
-                    {{-- Si el usuario logueado es customer --}}
-                    {{-- <a href="{{ route('dashboard.customer') }}"
+                    {{-- <a href="{{ route('admin.dashboard') }}"
                         class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard
-                        Customer</a> --}}
+                        Admin</a> --}}
+                    @else
+                    {{-- Si el usuario logueado es customer --}}
+                    <a href="{{ route('customer.dashboard') }}"
+                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Mi
+                        Perfil
+                        Customer</a>
                     @endif
+
                     @else
                     <x-nav-link hoverBgColor="primaryColor" :href="route('login')"
                         :active="request()->routeIs('login')">
@@ -128,8 +133,9 @@
                     @endif
                 </div>
 
+                {{-- Validate --}}
                 <div class="flex justify-center md:block md:ml-6">
-                    @if (Auth::user()->hasRole('admin'))
+                    @if (Auth::check() && Auth::user()->hasRole('admin'))
                     <a class="relative hidden text-white hover:text-white/70 transition-colors duration-300 transform"
                         href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart"
@@ -144,7 +150,7 @@
                         <span class="absolute top-0 left-0 p-1 text-xs text-white bg-blue-500 rounded-full"></span>
                     </a>
                     @endif
-                    {{-- <a class="relative text-white hover:text-white/70 transition-colors duration-300 transform"
+                    <a class="relative text-white hover:text-white/70 transition-colors duration-300 transform"
                         href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -156,7 +162,7 @@
                             <path d="M6 5l14 1l-1 7h-13"></path>
                         </svg>
                         <span class="absolute top-0 left-0 p-1 text-xs text-white bg-blue-500 rounded-full"></span>
-                    </a> --}}
+                    </a>
                 </div>
             </div>
         </div>
