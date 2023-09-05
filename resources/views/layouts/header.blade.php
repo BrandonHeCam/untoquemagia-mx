@@ -120,6 +120,14 @@
                         </svg>
                         {{__('Mis compras') }}
                     </x-nav-link>
+
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <x-nav-link hoverBgColor="blueRegilet" :href="route('logout')" onclick="event.preventDefault();
+                                                                            this.closest('form').submit();">
+                            {{ __('Cerrar sesión') }}
+                        </x-nav-link>
+                    </form>
                     @endif
 
                     @else
@@ -156,8 +164,7 @@
                 {{-- Validate --}}
                 <div class="flex justify-center md:block md:ml-6">
                     @if (Auth::check() && Auth::user()->hasRole('admin'))
-                    <a class="relative hidden text-white hover:text-white/70 transition-colors duration-300 transform"
-                        href="#">
+                    <a class="hidden text-white hover:text-white/70 transition-colors duration-300 transform" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -169,7 +176,7 @@
                         </svg>
                         <span class="absolute top-0 left-0 p-1 text-xs text-white bg-blue-500 rounded-full"></span>
                     </a>
-                    @endif
+                    @else
                     <a class="relative text-white hover:text-white/70 transition-colors duration-300 transform"
                         href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart"
@@ -183,6 +190,7 @@
                         </svg>
                         <span class="absolute top-0 left-0 p-1 text-xs text-white bg-blue-500 rounded-full"></span>
                     </a>
+                    @endif
                 </div>
             </div>
         </div>
