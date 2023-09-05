@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +32,8 @@ Route::prefix('/')->group(function () {
 | Rutas que solo el usuario con rol "administrador" puede acceder.
 */
 
-Route::prefix('admin')->middleware(['auth', 'second'])->group(function () {
-    Route::get('/products', ConteosController::class)->name('products');
+Route::prefix('admin')->middleware(['auth', 'checkrole:admin'])->group(function () {
+    Route::get('/products', ProductsController::class)->name('products');
 });
 
 // Route::get('/dashboard', function () {
