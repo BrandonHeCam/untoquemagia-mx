@@ -90,16 +90,36 @@
                         </svg>
                         {{__('Dashboard') }}
                     </x-nav-link>
-
-                    {{-- <a href="{{ route('admin.dashboard') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard
-                        Admin</a> --}}
                     @else
                     {{-- Si el usuario logueado es customer --}}
-                    <a href="{{ route('customer.dashboard') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Mi
-                        Perfil
-                        Customer</a>
+
+                    <p>{{ Auth::user()->name }}</p>
+
+                    <x-nav-link hoverBgColor="blueRegilet" :href="route('customer.profile.edit')"
+                        :active="request()->routeIs('customer.dashboard')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="block md:hidden" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                            <path d="M12 9v4"></path>
+                            <path d="M12 16v.01"></path>
+                        </svg>
+                        {{__('Mi Perfil') }}
+                    </x-nav-link>
+
+                    <x-nav-link hoverBgColor="blueRegilet" :href="route('customer.dashboard')"
+                        :active="request()->routeIs('customer.dashboard')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="block md:hidden" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                            <path d="M12 9v4"></path>
+                            <path d="M12 16v.01"></path>
+                        </svg>
+                        {{__('Mis compras') }}
+                    </x-nav-link>
                     @endif
 
                     @else
