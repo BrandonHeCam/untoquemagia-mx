@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\CustomerProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ProductsController;
+use App\Livewire\ShopCartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,11 +43,11 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'checkrole:admin'])->gro
     Route::delete('/profile', [AdminProfileController::class, 'destroy'])->name('admin.profile.destroy');
 });
 
-Route::prefix('client')->middleware(['auth', 'verified', 'checkrole:customer'])->group(function () {
-    Route::get('/dashboard', ProductsController::class)->name('customer.dashboard');
-    Route::get('/profile', [CustomerProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [CustomerProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [CustomerProfileController::class, 'destroy'])->name('profile.destroy');
+Route::prefix('customer')->middleware(['auth', 'verified', 'checkrole:customer'])->group(function () {
+    Route::get('/dashboard', ShopCartController::class)->name('customer.dashboard');
+    Route::get('/profile', [CustomerProfileController::class, 'edit'])->name('customer.profile.edit');
+    Route::patch('/profile', [CustomerProfileController::class, 'update'])->name('customer.profile.update');
+    Route::delete('/profile', [CustomerProfileController::class, 'destroy'])->name('customer.profile.destroy');
 });
 
 require __DIR__ . '/auth.php';
