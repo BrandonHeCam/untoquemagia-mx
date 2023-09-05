@@ -31,6 +31,10 @@ Route::prefix('/')->group(function () {
 | Rutas que solo el usuario con rol "administrador" puede acceder.
 */
 
+Route::prefix('admin')->middleware(['auth', 'second'])->group(function () {
+    Route::get('/products', ConteosController::class)->name('products');
+});
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
