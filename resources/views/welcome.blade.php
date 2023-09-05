@@ -7,6 +7,8 @@
             @include('layouts.header')
             </x-slot>
 
+            Vista de Pueblos Mágicos
+
             <x-slot:footer>
                 @include('layouts.footer')
                 </x-slot>

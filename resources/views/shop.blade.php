@@ -3,6 +3,8 @@
         Productos
         </x-slot>
 
+        Productos de la Tienda
+
         <x-slot:header>
             @include('layouts.header')
             </x-slot>
