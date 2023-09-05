@@ -7,11 +7,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
+| Rutas que todos los usuarios pueden acceder.
 */
 
 Route::prefix('/')->group(function () {
@@ -28,8 +24,12 @@ Route::prefix('/')->group(function () {
     })->name('about');
 });
 
-
-
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+| Rutas que solo el usuario con rol "administrador" puede acceder.
+*/
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
