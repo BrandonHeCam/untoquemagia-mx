@@ -8,11 +8,11 @@
                         <div class="flex-auto p-4">
                             <div class="flex flex-wrap">
                                 <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                                    <h5 class="text-blueGray-400 uppercase font-bold text-xs">
-                                        Traffic
+                                    <h5 class="text-blueGray-400 font-bold text-base">
+                                        Articulos en Stock
                                     </h5>
                                     <span class="font-semibold text-xl text-blueGray-700">
-                                        350,897
+                                        <p class="bg-red-700">Consulta a la BD</p>
                                     </span>
                                 </div>
                                 <div class="relative w-auto pl-4 flex-initial">
@@ -38,11 +38,11 @@
                         <div class="flex-auto p-4">
                             <div class="flex flex-wrap">
                                 <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                                    <h5 class="text-blueGray-400 uppercase font-bold text-xs">
-                                        New users
+                                    <h5 class="text-blueGray-400 font-bold text-base">
+                                        Nuevos usuarios
                                     </h5>
                                     <span class="font-semibold text-xl text-blueGray-700">
-                                        2,356
+                                        <p class="bg-red-700">Consulta a la BD</p>
                                     </span>
                                 </div>
                                 <div class="relative w-auto pl-4 flex-initial">
@@ -66,11 +66,11 @@
                         <div class="flex-auto p-4">
                             <div class="flex flex-wrap">
                                 <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                                    <h5 class="text-blueGray-400 uppercase font-bold text-xs">
-                                        Sales
+                                    <h5 class="text-blueGray-400 font-bold text-base">
+                                        Ventas
                                     </h5>
                                     <span class="font-semibold text-xl text-blueGray-700">
-                                        924
+                                        <p class="bg-red-700">Consulta a la BD</p>
                                     </span>
                                 </div>
                                 <div class="relative w-auto pl-4 flex-initial">
@@ -94,11 +94,11 @@
                         <div class="flex-auto p-4">
                             <div class="flex flex-wrap">
                                 <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                                    <h5 class="text-blueGray-400 uppercase font-bold text-xs">
-                                        Performance
+                                    <h5 class="text-blueGray-400 font-bold text-base">
+                                        Salidas
                                     </h5>
                                     <span class="font-semibold text-xl text-blueGray-700">
-                                        49,65%
+                                        <p class="bg-red-700">Consulta a la BD</p>
                                     </span>
                                 </div>
                                 <div class="relative w-auto pl-4 flex-initial">
