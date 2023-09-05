@@ -11,38 +11,51 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    <!-- Styles Swipper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    @livewireStyles
 </head>
 
-<body
-    x-data="{ page: 'ecommerce', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
-    x-init="
-        darkMode = JSON.parse(localStorage.getItem('darkMode'));
-        $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-    :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}">
-    <!-- ===== Page Wrapper Start ===== -->
-    <div class="flex h-screen overflow-hidden">
-        <!-- ===== Sidebar Start ===== -->
-        @include('admin.partials.sidebar')
-        <!-- ===== Sidebar End ===== -->
+<body class="text-blueGray-700 antialiased">
 
-        <!-- ===== Content Area Start ===== -->
-        <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
-            <!-- ===== Header Start ===== -->
-            @include('admin.partials.header')
-            <!-- ===== Header End ===== -->
+    @include('admin.partials.sidebar')
 
-            <!-- ===== Main Content Start ===== -->
-            <main>
-                {{ $slot }}
-            </main>
-            <!-- ===== Main Content End ===== -->
-        </div>
-        <!-- ===== Content Area End ===== -->
-    </div>
-    <!-- ===== Page Wrapper End ===== -->
+    <section class="relative md:ml-64 bg-blueGray-50">
+        @include('admin.partials.navbar')
+        @include('admin.partials.header')
+
+        {{ $slot }}
+    </section>
+
+    <!-- Script JS -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <script type="text/javascript">
+        /* Make dynamic date appear */
+      (function () {
+        if (document.getElementById("get-current-year")) {
+          document.getElementById("get-current-year").innerHTML =
+            new Date().getFullYear();
+        }
+      })();
+      /* Sidebar - Side navigation menu on mobile/responsive mode */
+      function toggleNavbar(collapseID) {
+        document.getElementById(collapseID).classList.toggle("hidden");
+        document.getElementById(collapseID).classList.toggle("bg-white");
+        document.getElementById(collapseID).classList.toggle("m-2");
+        document.getElementById(collapseID).classList.toggle("py-3");
+        document.getElementById(collapseID).classList.toggle("px-6");
+      }
+      /* Function for dropdowns */
+      function openDropdown(event, dropdownID) {
+        let element = event.target;
+        while (element.nodeName !== "A") {
+          element = element.parentNode;
+        }
+        Popper.createPopper(element, document.getElementById(dropdownID), {
+          placement: "bottom-start"
+        });
+        document.getElementById(dropdownID).classList.toggle("hidden");
+        document.getElementById(dropdownID).classList.toggle("block");
+      }
+    </script>
 </body>
 
 </html>
