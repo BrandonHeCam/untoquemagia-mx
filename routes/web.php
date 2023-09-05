@@ -19,6 +19,10 @@ Route::prefix('/')->group(function () {
         return view('welcome');
     })->name('home');
 
+    Route::get('/collections', function () {
+        return view('shop');
+    })->name('shop');
+
     Route::get('about', function () {
         return view('about_us');
     })->name('about');
@@ -27,9 +31,9 @@ Route::prefix('/')->group(function () {
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
