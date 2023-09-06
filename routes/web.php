@@ -14,15 +14,19 @@ use App\Livewire\CategoriesController;
 | Rutas que todos los usuarios pueden acceder.
 */
 
-Route::prefix('/')->group(function () {
-    Route::get('', function () {
-        return view('welcome');
-    })->name('home');
 
-    Route::get('collections', function () {
-        return view('shop');
-    })->name('shop');
-});
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
+
+Route::get('/about', function () {
+    return view('about_us');
+})->name('about');
+
+Route::get('collections', function () {
+    return view('shop');
+})->name('shop');
+
 
 /*
 |--------------------------------------------------------------------------
