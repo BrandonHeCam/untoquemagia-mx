@@ -47,8 +47,7 @@
                         {{__('Inicio') }}
                     </x-nav-link>
 
-                    <x-nav-link hoverBgColor="greenRegilet" :href="route('about')"
-                        :active="request()->routeIs('about')">
+                    <x-nav-link hoverBgColor="greenRegilet" :href="route('info')" :active="request()->routeIs('info')">
                         <svg xmlns="http://www.w3.org/2000/svg" class="block md:hidden" width="24" height="24"
                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -57,7 +56,7 @@
                             <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
                             <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
                         </svg>
-                        {{__('Nosotros') }}
+                        {{__('Información') }}
                     </x-nav-link>
 
                     <x-nav-link hoverBgColor="roseRegilet" :href="route('shop')" :active="request()->routeIs('shop')">
@@ -197,4 +196,3 @@
         </div>
     </nav>
 </header>
-<div class="bg-texture w-100 h-8"></div>
