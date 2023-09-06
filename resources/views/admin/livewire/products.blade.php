@@ -5,62 +5,42 @@
                 <div class="rounded-t mb-0 px-4 py-3 border-0">
                     <div class="flex flex-wrap items-center">
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                            <h3 class="font-semibold text-base text-blueGray-700">
+                            <h3 class="font-semibold text-lg text-blueGray-700">
                                 Mis Productos
                             </h3>
                         </div>
-                        <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-                            <button
-                                class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button">
-                                Buscar
-                            </button>
-                        </div>
                     </div>
                 </div>
+
                 <div class="block w-full overflow-x-auto">
                     <!-- Projects table -->
                     <table class="items-center w-full bg-transparent border-collapse">
                         <thead>
-                            <tr>
+                            <tr class="text-sm">
                                 <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                     Nombre
                                 </th>
                                 <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                     Categoria
                                 </th>
                                 <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                     Stock
                                 </th>
                                 <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                     Precio
+                                </th>
+
+                                <th
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                    Acciones
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- <tr>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                    /argon/
-                                </th>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    4,569
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    340
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                                    46,53%
-                                </td>
-                            </tr> --}}
                             <tr>
                                 <th
                                     class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
@@ -76,229 +56,85 @@
                                 </td>
                                 <td
                                     class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    <i class="fas fa-arrow-down text-orange-500 mr-4"></i>
+
                                     46,53%
                                 </td>
                             </tr>
-                            {{-- <tr>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                    /argon/charts.html
-                                </th>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    3,513
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    294
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    <i class="fas fa-arrow-down text-orange-500 mr-4"></i>
-                                    36,49%
-                                </td>
-                            </tr>
-                            <tr>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                    /argon/tables.html
-                                </th>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    2,050
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    147
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                                    50,87%
-                                </td>
-                            </tr>
-                            <tr>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                    /argon/profile.html
-                                </th>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    1,795
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    190
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    <i class="fas fa-arrow-down text-red-500 mr-4"></i>
-                                    46,53%
-                                </td>
-                            </tr> --}}
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        {{-- <div class="w-full xl:w-4/12 px-4">
+
+
+        <div class="w-full xl:w-4/12 px-4">
             <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-                <div class="rounded-t mb-0 px-4 py-3 border-0">
+                <div class="rounded-t mb-0 px-4 py-3 border bottom-1">
                     <div class="flex flex-wrap items-center">
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                            <h3 class="font-semibold text-base text-blueGray-700">
-                                Social traffic
+                            <h3 class="font-semibold text-lg text-blueGray-700">
+                                Nuevo Producto
                             </h3>
-                        </div>
-                        <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-                            <button
-                                class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button">
-                                See all
-                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="block w-full overflow-x-auto">
+                <div class="block w-[90%] overflow-x-auto mx-auto py-6">
                     <!-- Projects table -->
-                    <table class="items-center w-full bg-transparent border-collapse">
-                        <thead class="thead-light">
-                            <tr>
-                                <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                    Referral
-                                </th>
-                                <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                    Visitors
-                                </th>
-                                <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px">
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                    Facebook
-                                </th>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    1,480
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    <div class="flex items-center">
-                                        <span class="mr-2">60%</span>
-                                        <div class="relative w-full">
-                                            <div class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
-                                                <div style="width: 60%"
-                                                    class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                    Facebook
-                                </th>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    5,480
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    <div class="flex items-center">
-                                        <span class="mr-2">70%</span>
-                                        <div class="relative w-full">
-                                            <div class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200">
-                                                <div style="width: 70%"
-                                                    class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                    Google
-                                </th>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    4,807
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    <div class="flex items-center">
-                                        <span class="mr-2">80%</span>
-                                        <div class="relative w-full">
-                                            <div class="overflow-hidden h-2 text-xs flex rounded bg-purple-200">
-                                                <div style="width: 80%"
-                                                    class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                    Instagram
-                                </th>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    3,678
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    <div class="flex items-center">
-                                        <span class="mr-2">75%</span>
-                                        <div class="relative w-full">
-                                            <div class="overflow-hidden h-2 text-xs flex rounded bg-lightBlue-200">
-                                                <div style="width: 75%"
-                                                    class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-lightBlue-500">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                    twitter
-                                </th>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    2,645
-                                </td>
-                                <td
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    <div class="flex items-center">
-                                        <span class="mr-2">30%</span>
-                                        <div class="relative w-full">
-                                            <div class="overflow-hidden h-2 text-xs flex rounded bg-orange-200">
-                                                <div style="width: 30%"
-                                                    class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <section class="flex flex-col gap-4">
+                        <div class="w-full">
+                            <label for="name_product" class="block mb-2 text-sm font-semibold text-gray-800">Nombre
+                                del
+                                producto</label>
+                            <input type="text" name="name_product" class="w-full border-gray-300 focus:border-blue-300
+                                focus:ring-blue-300 rounded-md shadow-sm" required autofocus>
+                            <span class="text-sm text-red-600 dark:text-red-400 space-y-1"></span>
+                        </div>
+
+                        <div class="w-full">
+                            <label for="desc_product"
+                                class="block mb-2 text-sm font-semibold text-gray-800">Descripción</label>
+                            <textarea name="desc_product" class="w-full border-gray-300 focus:border-blue-300
+                                                            focus:ring-blue-300 rounded-md shadow-sm"></textarea>
+                            <span class="text-sm text-red-600 dark:text-red-400 space-y-1"></span>
+                        </div>
+
+                        <div class="w-full">
+                            <label for="price_product"
+                                class="block mb-2 text-sm font-semibold text-gray-800">Precio</label>
+                            <input type="number" name="price_product" class="w-1/2 border-gray-300 focus:border-blue-300
+                                focus:ring-blue-300 rounded-md shadow-sm">
+                            <span class="text-sm text-red-600 dark:text-red-400 space-y-1"></span>
+                        </div>
+
+                        <div class="w-full">
+                            <label for="price_product"
+                                class="block mb-2 text-sm font-semibold text-gray-800">Stock</label>
+                            <input type="number" name="price_product" class="w-1/2 border-gray-300 focus:border-blue-300
+                                focus:ring-blue-300 rounded-md shadow-sm">
+                            <span class="text-sm text-red-600 dark:text-red-400 space-y-1"></span>
+                        </div>
+
+                        <div class="w-full">
+                            <label for="image" class="block mb-2 text-sm font-semibold text-gray-800">Imagen</label>
+                            <input type="file"
+                                class="block w-full px-3 py-2 mt-2 text-sm text-gray-600 bg-white border border-gray-300 rounded-lg file:bg-gray-200 file:text-gray-800 file:text-sm file:px-4 file:py-1 file:border-none file:rounded-full focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
+                        </div>
+
+                        <div class="w-full">
+                            <label for="HeadlineAct" class="block text-sm font-medium text-gray-800">
+                                Categoria
+                            </label>
+                            <select name="cat_product" id="cat_product"
+                                class="mt-1.5 w-full rounded-lg border-gray-300 text-gray-800 sm:text-sm">
+                                <option value="">Please select</option>
+                            </select>
+                        </div>
+
+                        <x-primary-button>{{ __('Guardar') }}</x-primary-button>
+                    </section>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
     <footer class="block py-4">
         <div class="container mx-auto px-4">
