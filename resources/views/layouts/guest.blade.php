@@ -22,6 +22,29 @@
         {{ $slot }}
     </main>
     {{ $footer ?? '' }}
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        let swiper = new Swiper(".carouselUs", {
+                      spaceBetween: 30,
+                      centeredSlides: true,
+                      autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                      },
+                      pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                      },
+                      navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                      },
+                    });
+    </script>
 </body>
 
 </html>
