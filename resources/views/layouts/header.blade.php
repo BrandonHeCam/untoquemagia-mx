@@ -60,18 +60,6 @@
                         {{ __('Tienda') }}
                     </x-nav-link>
 
-                    <x-nav-link hoverBgColor="blueRegilet" :href="route('about')" :active="request()->routeIs('about')">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="block md:hidden" width="24" height="24"
-                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-                            <path d="M12 9v4"></path>
-                            <path d="M12 16v.01"></path>
-                        </svg>
-                        {{__('Nosotros') }}
-                    </x-nav-link>
-
                     <span class="hidden md:block">｜</span>
 
                     @if (Route::has('login'))

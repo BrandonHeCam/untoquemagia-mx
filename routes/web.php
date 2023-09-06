@@ -22,10 +22,6 @@ Route::prefix('/')->group(function () {
     Route::get('collections', function () {
         return view('shop');
     })->name('shop');
-
-    Route::get('about', function () {
-        return view('about_us');
-    })->name('about');
 });
 
 /*
