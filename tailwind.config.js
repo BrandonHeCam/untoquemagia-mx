@@ -32,6 +32,10 @@ export default {
                 Slide4: "url('/public/images/slides/slide_4.jpg')",
                 Slide5: "url('/public/images/slides/slide_5.jpg')",
                 Slide6: "url('/public/images/slides/slide_6.jpg')",
+                // Slides - Home
+                Slide1_Home: "url('/public/images/slides/slide_1-home.png')",
+                Slide4_Home: "url('/public/images/slides/slide_4-home.png')",
+                Slide5_Home: "url('/public/images/utils/untoquemagia.png')",
             },
             keyframes: {
                 change: {
