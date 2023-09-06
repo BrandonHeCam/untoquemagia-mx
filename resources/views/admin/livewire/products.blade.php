@@ -158,7 +158,9 @@
                             <button type="button" wire:click.prevent="Update()"
                                 class="btn btn-dark close-modal">ACTUALIZAR</button>
                             @endif --}}
-                            <x-primary-button>{{ __('Guardar') }}</x-primary-button>
+
+                            <button type="button" wire:click.prevent="Store()"
+                                class="btn btn-dark close-modal">GUARDAR</button>
                     </section>
                 </div>
             </div>
