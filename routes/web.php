@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ProductsController;
 use App\Livewire\ShopCartController;
+use App\Livewire\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,9 @@ Route::prefix('/')->group(function () {
 
 Route::prefix('admin')->middleware(['auth', 'verified', 'checkrole:admin'])->group(function () {
     Route::get('/dashboard', ProductsController::class)->name('admin.dashboard');
+
+    // Acciones de Categorias
+    Route::get('/categories', CategoriesController::class)->name('admin.categories');
 
     // Perfil Administrador
     Route::get('/profile', [AdminProfileController::class, 'edit'])->name('admin.profile.edit');
