@@ -5,8 +5,8 @@
 
         <x-slot:header>
             @include('layouts.header')
+            <div class="bg-texture w-100 h-8"></div>
             </x-slot>
-
             <!-- Section Carousel -->
             <section>
                 <!-- Swiper -->
@@ -174,27 +174,4 @@
             <x-slot:footer>
                 @include('layouts.footer')
                 </x-slot>
-
-                <!-- Swiper JS -->
-                <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-                <!-- Initialize Swiper -->
-                <script>
-                    let swiper = new Swiper(".carouselUs", {
-                  spaceBetween: 30,
-                  centeredSlides: true,
-                  autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  },
-                  pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                  },
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                  },
-                });
-                </script>
 </x-guest-layout>
