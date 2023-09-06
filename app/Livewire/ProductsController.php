@@ -12,6 +12,6 @@ class ProductsController extends Component
     #[Title('Mis Productos')]
     public function render()
     {
-        return view('admin.livewire.products');
+        return view('admin.livewire.products.products');
     }
 }
